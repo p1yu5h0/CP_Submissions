@@ -1,0 +1,32 @@
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int m=word1.size(), n=word2.size();
+        int dp[m+1][n+1];
+        for(int i=0;i<=m;i++)
+            dp[i][0] = 0;
+        for(int i=0;i<=n;i++)
+            dp[0][i] = 0;
+        for(int i=1;i<=m;i++){
+            for(int j=1;j<=n;j++){
+                if(word1[i-1]==word2[j-1]){
+                    dp[i][j] = 1 + dp[i-1][j-1];
+                } else {
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+        int lcs = dp[m][n];
+        return m+n-2*lcs;
+    }
+};
+/*
+- this is purely an lcs question taught greatly by verma ji 
+- in this we need to find the minimium number of steps to make word1 equal to word2 
+- just only one change in this question language is that we need to delete in both the strings
+- this can be done similarly to the insertion and deletion code 
+- answer is always insertion and deletion sum in this question
+- number of insertions is word1.length() - lcs
+- number of deletions is word2.length() - lcs
+- hence sum is word1.length() + word2.length() - 2*lcs
+*/
