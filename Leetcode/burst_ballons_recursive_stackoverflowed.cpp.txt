@@ -5,7 +5,7 @@ public:
             return 0;
         int maxi = INT_MIN;
         for(int k=i;k<=j;k++){
-            maxi = max(maxi, solve(v,i,k)+solve(v,k+1,j)+v[i-1]*v[i]*v[i+1]);   
+            maxi = max(maxi, solve(v,i,k-1)+solve(v,k+1,j)+v[i-1]*v[k]*v[j+1]);   
         }
         return maxi;
     }
