@@ -485,18 +485,19 @@ int main() {
 //    deleteNodeDll(head, 1);
 //    displayDll(head);
 
-    nodeCll* head = nullptr;
-    insertAtTailCll(head,1);
-    insertAtTailCll(head,2);
-    insertAtTailCll(head,3);
-    insertAtTailCll(head,4);
-    insertAtTailCll(head,5);
-    displayCll(head);
-    insertAtTailCll(head,6);
-    displayCll(head);
-    deleteCll(head,5);
-    displayCll(head);
-    deleteCll(head,1);
-    displayCll(head);
+//     nodeCll* head = nullptr;
+//     insertAtTailCll(head,1);
+//     insertAtTailCll(head,2);
+//     insertAtTailCll(head,3);
+//     insertAtTailCll(head,4);
+//     insertAtTailCll(head,5);
+//     displayCll(head);
+//     insertAtTailCll(head,6);
+//     displayCll(head);
+//     deleteCll(head,5);
+//     displayCll(head);
+//     deleteCll(head,1);
+//     displayCll(head);
+    
     return 0;
 }
