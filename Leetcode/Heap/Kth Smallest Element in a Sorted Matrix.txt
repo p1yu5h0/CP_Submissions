@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int kthSmallest(vector<vector<int>>& matrix, int k) {
+        priority_queue<int> maxh;
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix.size();j++){
+                maxh.push(matrix[i][j]);
+                if(maxh.size()>k){
+                    maxh.pop();
+                }
+            }
+        }
+        return maxh.top();
+    }
+};
+/*
+- by using maxh, we can decrease the complexity from nlogn to nlogk
+*/
