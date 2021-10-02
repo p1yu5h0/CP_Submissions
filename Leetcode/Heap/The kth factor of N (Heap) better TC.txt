@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int kthFactor(int n, int k) {
+        priority_queue<int> maxHeap;
+        maxHeap.push(n);
+        for(int i=1;i<=n/2;i++){
+            if(n%i==0){
+                maxHeap.push(i);
+            }
+            if(maxHeap.size()>k){
+                maxHeap.pop();
+            }
+        }
+        if(maxHeap.size()<k){
+            return -1;
+        }
+        return maxHeap.top();
+    }
+};
+/*
+Runtime: 0 ms, faster than 100.00% of C++ online submissions for The kth Factor of n.
+Memory Usage: 6.2 MB, less than 14.53% of C++ online submissions for The kth Factor of n.
+*/ 
